@@ -1,0 +1,77 @@
+<!-- exercício 1-->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercício 1</title>
+</head>
+<body>
+    <h2>Mudando emoções</h2>
+
+    <img id="rosto" src="normal.jpg" alt="um rosto calmo"> <br>
+
+    <button onclick="sorrir()">Ficar Feliz</button>
+</body>
+</html>
+
+<script>
+     function sorrir(){
+         rosto.src = 'feliz.jpg';
+     } 
+</script>
+
+
+<!-- exercício 2>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h2>Prevendo o futuro</h2> <br>
+
+    <img src="dinheiro-voando.jpg" alt="um desenho de alguem sem dinheiro"> <br>
+
+    Quanto dinheiro terá em 6 meses ? <input id="seis_meses"> <br>
+    Quanro dinheiro terá em 3 anos ? <input id="tres_anos"> <br>
+
+    <button onclick="prever()">Como estarei no futuro ?</button>
+
+
+
+    <div id="segunda_foto" style="display: none">
+        <img src="algum-dinheiro.jpg" alt="um desenho de alguem com algum dinheiro">
+        Você irá ter R$ <span id="dinheiro_seis_meses"></span>.
+    </div>
+
+
+          <br>
+          <br>
+
+
+    <div id="terceira_foto" style="display: none">
+        <img src="muito-dinheiro.jpg" alt="um desenho de alguem com muito dinheiro">
+        Você irá ter R$ <span id="dinheiro_tres_anos"></span>.
+    </div>
+</body>
+</html>
+
+
+<script>
+    function prever(){
+        
+        segunda_foto.style.display = 'block';
+        dinheiro_seis_meses.innerHTML = seis_meses.value;
+
+        terceira_foto.style.display = 'block';
+        dinheiro_tres_anos.innerHTML = tres_anos.value;
+    
+    }
+</script>
