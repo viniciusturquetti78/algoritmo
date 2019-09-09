@@ -1,3 +1,6 @@
+<!-- Lembrando que as src's das imagens presentes aqui foram as de momento, então tem que baixar imagens
+novamente e colocar seu nomes nos lugares certos para rodas o código -->
+
 <!-- exercício 1-->
 
 <!DOCTYPE html>
@@ -75,3 +78,127 @@
     
     }
 </script>
+
+<!-- exercício 3 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Informe sua nota: <input id="nota">
+    <br>
+    <button onclick="avo()">Opinião da Avó</button> 
+    
+    <button onclick="mae()">Opinião da mãe</button>
+</body>
+</html>
+
+<script>
+    function avo(){
+        alert(`Muito bem, que neto inteligente, porque tirou ${nota.value}`);
+    }
+
+    function mae(){
+        alert(`Não fez mais que tua obrigação com essa nota ${nota.value}`);
+    }
+</script>
+
+<!-- exercício 4 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    insira um número: <input id="numero_um"><br>
+
+    insira outro número: <input id="numero_dois"><br>
+
+    <button onclick="somar()">Somar</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+
+     <div id="div_mensagem" style="display: none">
+        O resultado é : <span id="resultado"></span>
+    </div>
+</body>
+</html>
+
+<script>
+    function somar() {
+        adicao = Number(numero_um.value) + Number(numero_dois.value);
+        resultado.innerHTML = `A soma entre ${numero_um.value} e ${numero_dois.value} é ${adicao}`;
+        div_mensagem.style.display = 'block';
+    }
+
+    function subtrair() {
+        subtração = Number(numero_um.value) - Number(numero_dois.value);
+        resultado.innerHTML = `A diferença entre ${numero_um.value} e ${numero_dois.value} é ${subtração}`;
+        div_mensagem.style.display = 'block';
+    }
+
+    function multiplicar() {
+        multiplicação = Number(numero_um.value) * Number(numero_dois.value);
+        resultado.innerHTML = `O produto entre ${numero_um.value} e ${numero_dois.value} é ${multiplicação}`;
+        div_mensagem.style.display = 'block';
+    }
+    
+    function dividir() {
+        divisão = Number(numero_um.value) / Number(numero_dois.value);
+        resultado.innerHTML = `A razão entre ${numero_um.value} e ${numero_dois.value} é ${divisão}`;
+        div_mensagem.style.display = 'block';
+    }
+</script>
+
+<!-- exercício 5 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="felicidade()">Feliz</button> 
+    <button onclick="neutralidade()">Neutro</button>
+    <button onclick="tristeza()">Triste</button> 
+    <button onclick="pistolar()">Pistola</button> <br>
+
+    <div id="div_mensagem" style="display: none">
+        <img id="foto" src="interrogação.png" alt="um rosto expressando emoção">
+    </div>
+</body>
+</html>
+
+<script>
+    function felicidade() {
+        foto.src = 'feliz.jpg';
+        div_mensagem.style.display = 'block';
+    }
+
+    function neutralidade() {
+        foto.src = 'normal.jpg';
+        div_mensagem.style.display = 'block';
+    }
+
+    function tristeza() {
+        foto.src = 'triste.png';
+        div_mensagem.style.display = 'block';
+    }
+
+    function pistolar() {
+        foto.src = 'raiva.png';
+        div_mensagem.style.display = 'block';
+    }
+
+</script>
+
