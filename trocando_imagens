@@ -202,3 +202,121 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
 
 </script>
 
+<!-- exercício 6 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua altura: <input id="altura" autofocus> <br>
+    Insira o seu peso: <input id="peso"> <br>
+
+    <button onclick="H_calcular()">IMC Homem</button>
+    <button onclick="M_calcular()">IMC Mulher</button>
+
+    <div id="div_mensagem" style="display: none;">
+        Seu Peso ideal é de <span id="peso_ideal"></span>
+
+    </div>
+</body>
+</html>
+
+<script>
+     
+    function H_calcular () {
+        var IMC = Number(peso.value) / (Number(altura.value) * Number(altura.value));
+        peso_ideal.innerHTML = `${IMC.toFixed(2)} Kg`
+        div_mensagem.style.display = 'block';
+    }
+    
+    function M_calcular () {
+        var IMC = (Number(peso.value) / (Number(altura.value) * Number(altura.value))) * 0.9;
+        peso_ideal.innerHTML = `${IMC.toFixed(2)} Kg`
+        div_mensagem.style.display = 'block';
+    }
+</script>
+
+<!-- exercício 7 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira a sua nota: <input id="nota"> <br>
+
+    <button onclick="avo ()">Opinião da avó</button>
+    <button onclick="mae ()">Opinião da mãe</button>
+
+    <div id="div_mensagem" style="display: none;">
+        <span id="comentario"></span> <br>
+        <img id="foto" src="" alt="">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function avo () {
+        comentario.innerHTML = `Muito bem, que neto inteligente, porque tirou ${nota.value}`;
+        foto.src = 'avo.jpg';
+        foto.alt = 'Desenho de uma avó feliz';
+        div_mensagem.style.display = 'block';
+    }
+    function mae () {
+        comentario.innerHTML = `Não fez mais que tua obrigação com essa nota ${nota.value}`;
+        foto.src = 'mae.jpg';
+        foto.alt = 'Desenho de uma mãe nervosa';
+        div_mensagem.style.display = 'block';
+    }
+</script>
+
+<!-- exercício 8 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="palmeiras()">Palmeiras</button>
+    <button onclick="corinthians()">Corinthians</button>
+    <button onclick="santos()">Santos</button>
+    <button onclick="saopaulo()">São Paulo</button>
+
+    <br>
+
+    <img id="foto" src="" alt="">
+</body>
+</html>
+
+<script>
+    function palmeiras(){
+        foto.src='palmeiras.jpg';
+        foto.alt='Escudo do palmeiras';
+    }
+
+    function corinthians(){
+        foto.src='corinthians.jpg';
+        foto.alt='Escudo do corinthians';
+    }
+
+    function santos(){
+        foto.src='santos.jpg';
+        foto.alt='Escudo do santos';
+    }
+
+    function saopaulo(){
+        foto.src='saopaulo.jpg';
+        foto.alt='Escudo do são paulo';
+    }
+</script>
