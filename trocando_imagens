@@ -420,3 +420,136 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
         alert(`O número de foras de Igor será de ${foras_igor}`);
     }
 </script>
+
+<!-- exercício 14 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o seu salário: <input id="salario"> <br>
+
+    <button onclick="confirmar()">Confirmar salário</button>
+    <button onclick="pagar100()">Pagar conta de 100</button>
+    <button onclick="pagar500()">Pagar conta de 500</button>
+    <button onclick="ganhar()">Ganhar 2000 na loteria</button>
+
+    <div id="divizinha" style="display: none">
+        Grana atual: R$<span id="mensagem">0</span>
+    </div>
+</body>
+</html>
+
+<script>
+    var grana;
+    function confirmar() {
+        grana = Number(salario.value);
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+
+    function pagar100 () {
+        grana -= 100;
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+
+    function pagar500 () {
+        grana -= 500;
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+
+    function ganhar () {
+        grana += 2000;
+        mensagem.innerHTML = `${grana}`;
+        divizinha.style.display = 'block';
+    }
+    
+</script>
+
+<!-- exercício 15-->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color: blue" >
+        Total guardado no cofrinho: R$ <u id="cofrinho">0.00</u> <br>
+        Depósitos efetuados: <u id="depositos">0</u>
+    </div>
+
+    <button onclick="cinquenta()">Depositar 0,50</button>
+    <button onclick="dois()">Depositar 2,00</button>
+</body>
+</html>
+
+<script>
+    var no_cofre = 0; 
+    var depositei = 0;
+
+    function cinquenta () {
+        no_cofre += 0.5;
+        depositei ++;
+        cofrinho.innerHTML = `${no_cofre}`;
+        depositos.innerHTML = `${depositei}`;
+    }
+
+    function dois () {
+        no_cofre += 2;
+        depositei ++;
+        cofrinho.innerHTML = `${no_cofre}`;
+        depositos.innerHTML = `${depositei}`;
+    }
+</script>
+
+<!-- exercício 16 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="color: green" >
+        Votos na <u>Praça é Nossa</u>: <b id="na_praca">0</b> <br>
+        Votos na <u>Zorra total</u>: <b id="na_zorra">0</b> <br>
+        Total de votos: <b id="votacao">0</b> <br>
+    </div>
+
+    <button onclick="votei_praca()">Votar na Praça é Nossa</button>
+    <button onclick="votei_zorra()">Votar na Zorra Total</button>
+</body>
+</html>
+
+<script>
+    var votos_na_praca = 0;
+    var votos_na_zorra = 0; 
+    var votos_totais = 0;
+
+    function votei_praca () {
+        votos_na_praca ++;
+        votos_totais ++;
+
+        na_praca.innerHTML = votos_na_praca;
+        votacao.innerHTML = votos_totais;
+    }
+
+    function votei_zorra () {
+        votos_na_zorra ++;
+        votos_totais ++;    
+
+        na_zorra.innerHTML = votos_na_zorra;
+        votacao.innerHTML = votos_totais;
+    }
+</script>
