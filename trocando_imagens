@@ -158,7 +158,7 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
     }
 </script>
 
-<!-- exercício 5 -->
+<!-- exercício 6 -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -202,7 +202,7 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
 
 </script>
 
-<!-- exercício 6 -->
+<!-- exercício 7 -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -240,7 +240,7 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
     }
 </script>
 
-<!-- exercício 7 -->
+<!-- exercício 8 -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -278,7 +278,7 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
     }
 </script>
 
-<!-- exercício 8 -->
+<!-- exercício 9 -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -318,5 +318,105 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
     function saopaulo(){
         foto.src='saopaulo.jpg';
         foto.alt='Escudo do são paulo';
+    }
+</script>
+
+<!-- exercício 10 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do seu salário: <input id="bruto" autofocus> <br>
+    Insira o valor da mesada de seu filho: <input id="mesada"> <br>
+    Insira o valor do abono de Natal: <input id="abono"> <br>
+    <button onclick="calcular()">Calcular saldo</button>
+</body>
+</html>
+
+<script>
+  function calcular() {
+      var salario_liquido = Number(bruto.value);
+      
+      // calculando a perca em relação a mesada
+      salario_liquido -= Number(mesada.value);
+
+      // calculando o ganho pelo abono de natal
+      salario_liquido += Number(abono.value);
+
+      alert(`O seu salário liquido é de R$ ${(salario_liquido).toFixed(2)}`);
+  }
+</script>
+
+<!-- exercício 11 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do cateto oposto: <input id="cat_oposto" autofocus> <br>
+    Insira o valor do cateto adjacente: <input id="cat_adjacente"> <br>
+    <button onclick="calcular()">Calcular hipotenusa</button>
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var hipotenusa = Number(cat_oposto.value) ** 2;
+
+        // calculando a potência do cateto adjacente somado a potência do cateto oposto
+        hipotenusa += (Number(cat_adjacente.value) ** 2);
+
+        // calculando a raiz da soma das potências dos catetos
+        var resultado =  hipotenusa ** (0.5);
+
+        alert(`O valor da hipotenusa é de ${(resultado).toFixed(2)}`);
+    }
+
+</script>
+
+<!-- exercício 12 -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor do salário do irmão de Igor: <input id="salario_irmao_igor" autofocus><br>
+    Insira a quantidade de ficantes do irmão de Igor: <input id="ficantes_irmao_igor"> <br>
+    Insira a quantidade de foras que o irmão de Igor levou: <input id="foras_irmao_igor"> <br>
+    <button onclick="calcular()">Meta de Igor</button>
+</body>
+</html>
+
+<script>
+    function calcular () {
+        var salario_igor = Number(salario_irmao_igor.value);
+        var ficantes_igor = Number(ficantes_irmao_igor.value);
+        var foras_igor = Number(foras_irmao_igor.value);
+
+        // calculando o salário de Igor
+        salario_igor *= 1.1;
+        alert(`O salário de Igor será de ${(salario_igor).toFixed(2)}`);
+
+        // calculando o número de ficantes de Igor
+        ficantes_igor ++;
+        alert(`O número de ficantes de Igor será de ${ficantes_igor}`);
+
+        // calculando o número de foras de igor
+        foras_igor --;
+        alert(`O número de foras de Igor será de ${foras_igor}`);
     }
 </script>
