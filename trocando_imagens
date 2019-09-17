@@ -553,3 +553,83 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
         votacao.innerHTML = votos_totais;
     }
 </script>
+
+<!-- Exercício 17 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img onclick="votar_eddie()" src="eddie.jpg" alt="imagem do cantor do Pearl Jam, Eddie Vedder">
+    Votos: <b id="eddinho">0</b>
+
+    <br>
+
+    <img onclick="votar_kurt()" src="kurt.jpg" alt="imagem do falecido cantor do Nirvana, Kurt Cobain">
+    Votos: <b id="kurtinho">0</b>
+
+    <br>
+    Total de votos: <b id="votacao">0</b>
+</body>
+</html>
+
+<script>
+    var votos_eddie = 0;
+    var votos_kurt = 0;
+    var votos_totais = 0;
+
+    function votar_eddie() {
+        votos_eddie ++;
+        votos_totais ++;
+
+        eddinho.innerHTML = `${votos_eddie}`;
+        votacao.innerHTML = `${votos_totais}`;
+    }
+
+    function votar_kurt() {
+        votos_kurt ++;
+        votos_totais ++;
+
+        kurtinho.innerHTML = `${votos_kurt}`;
+        votacao.innerHTML = `${votos_totais}`;
+    }
+</script>
+
+<!-- Exercício 18 -->
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="aumentar()">Aumentar a largura</button>
+    <button onclick="reduzir()">Reduzir a altura</button>
+    <br>
+    <img id="eddinho" src="eddie.jpg" alt="" style="width: 300px; height: 300px;">
+</body>
+</html>
+
+<script>
+    var tamanho = 300;
+
+    function aumentar () {
+        tamanho += 10;
+
+        eddinho.style.width = `${tamanho}px`;
+    }
+
+    function reduzir () {
+        tamanho -= 10;
+
+        eddinho.style.height = `${tamanho}px`; 
+    }
+</script>
