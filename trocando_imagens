@@ -638,37 +638,39 @@ novamente e colocar seu nomes nos lugares certos para rodas o código -->
 
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>press F for paul</title>
 </head>
+
 <body>
     <button onclick="direita()">Mover p/ Esquerda</button>
-    <button onclick="esquerda()">Mover p/ Direita</button>
-    Quantos pixels: <input id="numero_pixels">
-    
-    <br>
-    <br>
+    <button onclick="esquerda()">Mover p/ Direita</button> velocidade do acidente: <input id="numero_pixels">
 
-    <img id="fotinha" src="bart.jpg" alt="personagem Bart, do desenho Os simpsons, andando de skate" style="margin-left: 0px;margin-right: 0px;">
+    <br>
+    <br>
+    <img id="fotinha" src="paul.png" alt="zuuuuuuuuuuuuum" style="margin-left: 0px; height: 200px; ">
+     
 </body>
+
 </html>
 
 <script>
-    var mover_direita = 0;
     var mover_esquerda = 0;
-    
-    function direita () {
-    var pixels = Number(numero_pixels.value);
-    mover_esquerda += pixels;
-    fotinha.style.marginLeft = `${mover_esquerda}px`;
+
+    function esquerda() {
+        var pixels = Number(numero_pixels.value);
+        mover_esquerda += pixels;
+        fotinha.style.marginLeft = `${mover_esquerda}px`;
+
     }
 
-    function esquerda () {
-    var pixels = Number(numero_pixels.value);
-    mover_direita += pixels;
-    fotinha.style.marginRight = `${mover_direita}px`;
+    function direita() {
+        var pixels = Number(numero_pixels.value);
+        mover_esquerda -= pixels;
+        fotinha.style.marginLeft = `${mover_esquerda}px`;
     }
 </script>
