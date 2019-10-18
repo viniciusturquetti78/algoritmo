@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="ISO-8895-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prova - c2</title>
+</head>
+
+<body>
+    qual é o valor inicial do inverstimento <input type="text" id="valor1"><br>
+    <!------------------------------------------------------------------------>
+    por quantos meses o dinheiro ficará investido <input type="text" id="meses"><br>
+    <!------------------------------------------------------------------------>
+    <button onclick="comparar()">Comparar investimentos</button>
+
+    <div id="div_mensagem">
+
+    </div><br><br>
+    <div id="div2" style="color:green">
+    </div>
+
+</body>
+
+</html>
+<script>
+    var investimento_m_a = 0;
+    var investimento_m_b = 0;
+
+    function comparar() {
+        var v_inicial = Number(valor1.value);
+        var v_meses = Number(meses.value);
+        var contador_1 = 0;
+        var contador_2 = 0;
+        investimento_m_a = v_inicial
+        investimento_m_b = v_inicial
+
+
+        if (v_inicial < 1000) {
+            div_mensagem.innerHTML = `O valor mínimo para investimento inicial é de R$1000!<br><br>`;
+        }
+
+        if (v_meses < 3 || v_meses > 18) {
+            div2.innerHTML = `O tempo de investimento deve ser entre 3 e 18 meses!`;
+        } else {
+            while (contador_1 < v_meses) {
+                contador_1++;
+                v_inicial *= 1.015;
+                div_mensagem.innerHTML += ` Investimento A após ${contador_1} meses: R$ ${v_inicial.toFixed(2)}<br><br>`
+                div_mensagem.style.color = 'blue';
+            }
+
+            while (contador_2 < v_meses) {
+
+                contador_2++;
+                v_meses *= 1.013;
+                if (contador_2 == 3 || contador_2 == 6 || contador_2 == 12) {
+
+                    div2.innerHTML += `Investimento A após ${contador_2}
+                            meses: R$ ${(investimento_m_b).toFixed(2)} + R$ 20 = R$`;
+                    investimento_m_b += v_inicial * 0.01;
+
+                    div2.innerHTML += `${(investimento_m_b).toFixed(2)}<img src="./money.png" alt="" style="width: 20px"> <br>`;
+
+                } else {
+                    div2.innerHTML += `Investimento A após ${contador_2}
+                            meses: R$ ${(investimento_m_b).toFixed(2)} <br>`;
+
+                }
+            }
+
+            if (investimento_m_a > investimento_m_b) {
+                div2.innerHTML += 'o investimento A foi mais vantajoso<br>'
+
+            }
+
+            if (investimento_m_a < investimento_m_b) {
+                div2.innerHTML += 'o investimento B foi mais vantajoso<br>'
+            }
+            if (investimento_m_a == investimento_m_b) {
+                div2.innerHTML += 'Ambos os investimentos darão o mesmo retorno<br>'
+            }
+        }
+
+
+
+    }
+</script>
